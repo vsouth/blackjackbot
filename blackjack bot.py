@@ -1,6 +1,8 @@
 import discord
+import os
 import itertools
 from random import shuffle
+from decouple import config
 
 # команды
 start_requests = ['ебаный рот этого казино',
@@ -199,6 +201,5 @@ async def on_message(message):
             await message.channel.send(
                 f'Так у вас на руках ни одной карты, надо сначала раздать, а потом уже "{message.content}".')
 
-
-client.run('ODQ4MTkxMTU3MDkxNTY1NjQ1.YLJBkg.460pTHU4oRLCkQtD93pRDbdwlIA')
+client.run(config('TOKEN'))
 
